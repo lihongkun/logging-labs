@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <!--<Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%level] [%thread] [%logger{15}] \: %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>-->
+    <Appenders>
+        <RandomAccessFile name="default" fileName="log4j2-lab.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%thread] [%-5level] [%logger{30}] - %msg%n"/>
+        </RandomAccessFile>
+        <!--<Async name="defaultAsync">
+            <AppenderRef ref="default"/>
+        </Async>-->
+    </Appenders>
+    <Loggers>
+        <Root level="info" includeLocation="false">
+            <AppenderRef ref="default"/>
+            <!--<AppenderRef ref="default"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
